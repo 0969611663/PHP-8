@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <p id="demo"></p>
+</head>
+<body>
+<!--Bài 1: Viết chương trình hiển thị chuỗi “The number is N” 5 lần sử dụng vòng lặp for. Với N sẽ hiển thị từ 0 đến 5.-->
+<script>
+    var text = "";
+    var i;
+    for (i = 0; i < 5; i++) {
+        text += "the number is N" + i + "<br>";
+     }
+    document.getElementById("demo").innerHTML = text;
+</script>
+<!-- Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.-->
+<!--<script>
+    var num = prompt("enter your number",'');
+    var  total = 0;
+    var i;
+    for (i = 1 ; i <= num; i = i +1) {
+        total = total + i;
+    }
+    alert(total);
+
+
+</script>-->
+</body>
+</html>

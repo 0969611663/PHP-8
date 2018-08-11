@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Viết chương trình nhập vào giá trị cho a và b. Tính
+tổng a và b, nếu tổng nhỏ hơn 4, hiển thị chuỗi Below, ngược
+lại hiển thị Over. Lưu ý sử dụng toán tử ?
+<script>
+    var a = parseInt(prompt("a"));
+    var b = parseInt(prompt("b"));
+    result = (a + b < 4)? alert('Below') : alert('Over');
+</script>-->
+<!--Bài 2: Viết chương trình nhập vào giá trị cho chuỗi message.
+
+  Nếu giá trị nhập vào là Employee thì hiển thị chuỗi Hello.
+
+  Còn lại nếu giá trị nhập vào là Director thì hiển thị chuỗi Greetings
+
+  Còn lại nếu giá trị nhập vào chuỗi rỗng thì hiển thị No login
+
+  Còn lại hiển thị chuỗi rỗng
+
+  Sử dụng toán tử ?-->
+
+<!--cach 1-->
+
+<script>
+    var message = prompt("nhap");
+    if (message == 'Employee') {
+        alert('Hello');
+    } else if (message == 'Director') {
+        alert('Greetings');
+    } else if (message == '') {
+        alert('No login');
+    } else {
+        alert(message == '');
+    }
+</script>
+
+<!--cach 2-->
+
+<!--<script>
+    var message = prompt("nhap");
+    result = (message == 'Employee') ? alert('Hello') : (message == 'Director') ? alert('Greetings') : (message == '') ? alert('No login') :'';
+</script>-->
+</body>
+</html>

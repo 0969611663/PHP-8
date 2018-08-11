@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="tudien">
+<input type="button" id="WFT" onclick="timkiem()" value="timkiem">
+<script>
+    var english = ["dog", "cat"];
+    var vietnamese = ["con chó", "con mèo"];
+    var t;
+
+    function timkiem() {
+        t = document.getElementById("tudien").value;
+        for (i = 0; i < vietnamese.length; i++) {
+            if (t === english[i]) {
+                alert(vietnamese[i]);
+            }
+        }
+    }
+</script>
+</body>
+</html>

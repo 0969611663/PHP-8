@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="numb">
+<button type="button" onclick="number()">TinhSoNgay</button>
+<script>
+    function number() {
+        var x = parseInt(document.getElementById("numb").value);
+        switch (x) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 10:
+            case 12:
+                alert("Thang co 31 ngay");
+                break;
+
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert("Thang co 30 ngay");
+                break;
+
+            case 2:
+                alert("Thang co 28 or 29 ngay");
+                break;
+
+            default:
+                alert("noChoi");
+        }
+
+    }
+    /*  function number() {
+          var x = parseInt(document.getElementById("numb").value);
+          if (x == 1) {
+              alert("Thang co 31 ngay");
+          } else if (x == 2) {
+              alert("thang co 28 or 29 ngay");
+          } else {
+              alert("noChoi");
+          }
+
+      } */
+</script>
+</body>
+</html>

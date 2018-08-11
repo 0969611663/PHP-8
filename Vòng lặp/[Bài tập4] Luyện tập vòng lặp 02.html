@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: In hình chữ nhật rỗng-->
+<script>
+    var i, j, a, b, h;
+    a = prompt("nhập số");
+    b = prompt("nhâp số");
+    document.write("<table border='1'>");
+    for (i = 1; i <= b; i++) {
+        document.write("<tr>");
+        for (j = 1; j <= a; j++) {
+            if (j == 1 || j == a || i == 1 || i == b) {
+                document.write("<td>");
+                document.write("*");
+                document.write("</td>");
+            }
+            else {
+                document.write("<td>");
+                document.write("");
+                document.write("</td>");
+            }
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>

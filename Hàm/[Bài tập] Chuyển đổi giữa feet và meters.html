@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="chuyendoi"></p>
+<input type="button" value="feet " onclick="feet ()">
+<input type="button" value="meters" onclick="meters()">
+<script>
+    var meter;
+    var foot;
+
+    function feet() {
+        meter = prompt("nhap gia tri maters");
+        for (var i = 0; i < 100; i++) {
+            foot = 3.279 * meter;
+        }
+        alert("Gia tri foot la:" + foot);
+    }
+
+    function meters() {
+        foot = prompt("nhap gia tri feet");
+        for (var i = 0; i < 100; i++) {
+            meter = 0.305 * foot;
+        }
+        alert("Gia tri meter la: " + meter);
+    }
+</script>
+</body>
+</html>

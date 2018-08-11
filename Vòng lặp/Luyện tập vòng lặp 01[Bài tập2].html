@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào
+trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20 và trên 0, yêu cầu người dùng tăng nhiệt độ. Chương
+trình chạy liên tục đến khi người dùng nhập vào giá trị của nhiệt độ dưới 0 thì kết thúc.-->
+<script>
+    var a;
+    a = prompt("nhập nhiệt độ");
+    while (a>0) {
+        if (a < 20) {
+            a = prompt("tăng nhiệt độ");
+        }
+        if (a > 100) {
+            a = prompt("giảm nhiệt độ");
+        }
+        if (a>20 && a<=100) {
+            a = prompt("nhiệt độ ổn định")
+        }
+    }
+</script>
+</body>
+</html>

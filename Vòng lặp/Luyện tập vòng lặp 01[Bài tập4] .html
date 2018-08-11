@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Game đoán số-->
+<script>
+    var a, b, x, c, e;
+    a = parseInt(prompt("nhap so"));
+    b = parseInt(prompt("nhap so"));
+    x = Math.floor(Math.random() * (b - a) + a);
+    c = parseInt(prompt("nhap so ban doan"));
+    if (c == x) {
+        alert("ban doan dung")
+    } else {
+        for (var i = 0; i < 3; i++) {
+            e = parseInt(prompt("nhap lai so"));
+            if (e == x) {
+                alert("ban doan dung");
+                break;
+            } else {
+                alert("ban doan sai")
+            }
+        }
+    }
+</script>
+</body>
+</html>
