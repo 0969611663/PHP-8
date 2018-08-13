@@ -6,5 +6,27 @@
 </head>
 <body>
 <!--Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. -->
+<script>
+    function isCharacter() {
+        var count = 0;                      //biến đếm tự đặt
+        var n = prompt("số lần nhập vào mảng");
+        var a = Array(n);                   //số phần tử trong mảng
+        for (var i = 0; i < n; i++) {
+            a[i] = prompt("nhập phần tử vào mảng");
+        }
+        var b = prompt("nhập vào 1 kí tự bất kì ");
+        for (var j = 0; j < n; j++) {       //đếm số lần xuất hiện
+            if (b == a[j]) {
+                count = count + 1;
+            }
+        }
+        if (count == 0) {
+            alert("-1");
+        } else {
+            alert("số lầ lặp lại là: " + count);
+        }
+    }
+</script>
+<button type="button" onclick="isCharacter()">Click</button>
 </body>
 </html>

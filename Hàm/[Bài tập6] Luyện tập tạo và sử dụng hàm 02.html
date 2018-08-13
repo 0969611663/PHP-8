@@ -7,14 +7,15 @@
 <body>
 <!--Bài 6: Viết hàm nhận vào một ký tự trong bảng chữ cái [a-z][A-Z], kiểm tra xem nếu ký tự đưa vào có phải là nguyên âm không. Nếu là nguyên âm trả về true, ngược lại trả về false.-->
 <script>
-        function kiemtra(a) {
-            if (isNaN(a)) {
-                return true;
-            } else {
-                return false;
-            }
+    function isCharacter(letter) {
+        if (letter === 'a'|| letter === 'i' || letter === ' u' || letter === 'e' || letter === ' o' || letter === ' A' || letter === 'I' || letter === 'U' || letter === 'E' || letter === 'O') {
+            return true;
         }
-        alert(kiemtra(prompt("nhập giá trị")));
+        return false;
+    }
+    vowel = prompt("nhap");
+    document.write(isCharacter(vowel));
+
 </script>
 </body>
 </html>
