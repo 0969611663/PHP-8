@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var FizzBuzz =  {
+        fizzBuzz: function (number){
+            if(number % 3 == 0 && number % 5 == 0)
+                return "FizzBuzz";
+            if(number % 3 == 0)
+                return "Fizz";
+            if(number % 5 == 0)
+                return "Buzz";
+            return number + "";
+        }
+    };
+    module.exports = FizzBuzz;
+</script>
+<script>
+    var FizzBuzz =  {
+        fizzBuzz: function (number){
+            var isFizz = number % 3 == 0;
+            var isBuzz = number % 5 == 0;
+
+            if(isFizz && isBuzz)
+                return "FizzBuzz";
+            if(isFizz)
+                return "Fizz";
+            if(isBuzz)
+                return "Buzz";
+            return number + "";
+        }
+    };
+</script>
+</body>
+</html>
+<!--Y NGHIA CHO HAM DON GIAN, DE HIEU,NGAN HAN-->

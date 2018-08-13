@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    var Cylinder = {
+        getVolume: function (radius, height) {
+            var baseArea = Math.PI * radius * radius;
+            var perimeter = 2 * Math.PI  * radius;
+            var volume = perimeter * height + 2 * baseArea;
+            return volume;
+        }
+    };
+
+    module.exports = Cylinder;
+</script>
+<script>
+    'use strict';
+
+    var expect = require('chai').expect;
+    var cylinder = require('../cylinder');
+
+    describe('Cylinder', function() {
+        it('radius = 0, height = 0, volume = 0', function() {
+            var radius = 0;
+            var height = 0;
+            var expected = 0;
+
+            var result = cylinder.getVolume(radius, height);
+
+            expect(result).to.equal(expected);
+        });
+
+        it('radius = 0, height = 0, volume = 0', function() {
+            var radius = 1;
+            var height = 2;
+            var expected = 18.84955592153876;
+
+            var result = cylinder.getVolume(radius, height);
+
+            expect(result).to.equal(expected);
+        });
+    });
+</script>
+</body>
+</html>

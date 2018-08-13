@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.-->
+<script>
+    function minNumb(n, n1, n2) {
+        var min = n;
+        if (n1 < min) {
+            return min = n1;
+        }
+        if (n2 < min) {
+            return min = n2;
+        }
+        alert(min)
+    }
+    numb = parseInt(prompt("nhập"));
+    numb1 = parseInt(prompt("nhập"))
+    numb2 = parseInt(prompt("nhập"))
+    alert(minNumb(numb, numb1, numb2));
+</script>
+</body>
+</html>
