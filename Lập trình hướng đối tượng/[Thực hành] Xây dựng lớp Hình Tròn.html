@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var circle = function (radius) {
+
+        this.setRadius = function (radius_new) {
+            radius = radius_new;
+        }
+
+        this.getArea = function () {
+            return 3.14 * (radius * radius);
+        }
+        this.display = function () {
+            document.write("radius = " + radius);
+            document.write("Area" + this.getArea());
+        }
+    }
+
+    function main() {
+        /*var rad = new circle(5);
+        document.write("Circle1: ");
+        rad.display();
+
+        rad.setRadius(2);
+        document.write("sau khi đổi: ");
+        rad.display();*/
+
+        var rad = circle.getRadius(); // 2
+        document.write("Circle1: ")
+        
+    }
+    main();
+</script>
+</body>
+</html>

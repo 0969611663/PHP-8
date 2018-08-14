@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var myDate = function (day, month, year) {
+
+        this.getDay = function () {
+            return day;
+        }
+
+        this.getMonth = function () {
+            return month;
+        }
+
+        this.getYear = function () {
+            return year;
+        }
+
+        this.date = function () {
+            return day + "/" + month + "/" + year;
+        }
+        this.display = function () {
+            document.write("Day: "+ day + "month: "+ month + "year" + year);
+            document.write("date: " + this.date());
+        }
+
+        this.setDay = function (day_new) {
+            day = day_new;
+        }
+
+        this.setMonth = function (month_new) {
+            month = month_new;
+        }
+
+        this.setYear = function (year_new) {
+            year = year_new;
+        }
+    }
+
+    function main() {
+        var dates = new myDate(2, 2, 2007);
+        document.write("data");
+        dates.display();
+
+        dates.setDay(10);
+        document.write("--Sau Khi doi--")
+        dates.display();
+    }
+    main();
+</script>
+</body>
+</html>

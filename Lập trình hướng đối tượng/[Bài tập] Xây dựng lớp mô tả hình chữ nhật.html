@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var rectangular = function (width, height) {
+
+        this.getArea = function () {
+            return width * height;
+        }
+
+        this.getPerimeter = function () {
+            return (width + height) * 2;
+        }
+        this.display = function () {
+           console.log("Area" + this.getArea());
+            console.log("Perimeter" + this.getPerimeter());
+        }
+    }
+
+    function main() {
+
+        for (var i = 1; i <= 7; i++) {
+            for (var j = 1; j < 5; j++) {
+                console.log("#");
+            }
+            console.log("#" + "<br>");
+        }
+        var total = new rectangular(5,7);
+        total.display();
+    }
+    main();
+</script>
+</body>
+</html>

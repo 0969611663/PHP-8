@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var temperatures = function (oC) {
+        this.getConvertF = function () {
+            return (9 * oC + 160) / 5;
+        }
+        this.getConvertK = function () {
+            return oC + 273.15;
+        }
+        this.display = function () {
+            document.write("oF: " + this.getConvertF() + "--");
+            document.write("oK: " + this.getConvertK());
+        }
+    }
+
+    function main() {
+        var temperature = new temperatures(25);
+        document.write("Temperature: ");
+        temperature.display();
+    }
+
+    main();
+</script>
+</body>
+</html>
