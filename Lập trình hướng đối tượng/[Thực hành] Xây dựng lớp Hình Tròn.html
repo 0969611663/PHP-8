@@ -6,15 +6,26 @@
 </head>
 <body>
 <script>
-    var circle = function (radius) {
+    var circle = function (radius, color) {
+        this.radius = radius;
+        this.color = color;
 
         this.setRadius = function (radius_new) {
             radius = radius_new;
         }
 
-        this.getArea = function () {
-            return 3.14 * (radius * radius);
+        this.getColor = function () {
+            return this.color;
         }
+
+        this.getRadius = function () {
+            return this.radius;
+        }
+
+        this.getArea = function () {
+            return 3.14 * (this.radius * this.radius);
+        }
+
         this.display = function () {
             document.write("radius = " + radius);
             document.write("Area" + this.getArea());
@@ -30,10 +41,11 @@
         document.write("sau khi đổi: ");
         rad.display();*/
 
-        var rad = circle.getRadius(); // 2
-        document.write("Circle1: ")
-        
+        /*var rad = circle.getRadius(); // 2
+        document.write("Circle1: ")*/
+
     }
+
     main();
 </script>
 </body>
