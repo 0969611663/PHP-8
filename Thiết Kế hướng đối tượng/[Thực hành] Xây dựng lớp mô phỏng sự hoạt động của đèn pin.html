@@ -6,15 +6,11 @@
 </head>
 <body>
 <script>
-    function Battery(energy) {
+    var Battery = function (energy) {
         this.energy = energy;
 
-        this.Batterys = function (energy) {
-            this.energy = energy;
-        }
-
         this.setEnergy = function (energy_new) {
-            energy = energy_new;
+            this.energy = energy_new;
         }
 
         this.getEnergy = function () {
@@ -22,17 +18,66 @@
         }
 
         this.decreaseEnergy = function () {
-            this.energy = energy - 2;
+            this.energy -= 2;
         }
     }
-    function FlashLamp(boolean, Battery) {
-        this.status = boolean;
-        this.battery = Battery;
 
-        this.FlashLamps = function () {
-            return turnOff = this.battery < 0
+    var FlashLamp = function () {
+        this.status = false;
+        this.battery = null;
+
+        this.setBattery = function (Battery_new) {
+            this.battery = Battery_new;
+        }
+
+        this.getBatteryInfo = function () {
+            return this.battery;
+        }
+
+        this.light = function () {
+            if (this.status) {
+                alert("Đèn sáng: ");
+            }
+        }
+
+        this.turnON = function () {
+            if (this.battery.getEnergy() > 0) {
+                this.status = true;
+                this.light();
+                this.battery.decreaseEnergy();
+            } else {
+                alert("hết pin");
+            }
         }
     }
+
+    this.turnOFF = function () {
+        this.status = false;
+        alert("Tắt đèn");
+    }
+    //Tao doi tuong pin
+    var battery1 = new Battery(100);
+    //Tao doi tuong den
+    var flashLamp = new FlashLamp();
+    //Lap pin vao den
+    flashLamp.setBattery(battery1);
+    //bat den
+    flashLamp.turnON();
+    // //tat den
+    // flashLamp.turnOFF();
+
+    // var torch = new FlashLamp(100);
+    //
+    // function usea() {
+    //     torch.turnON()
+    // }
+    //
+    // function usea1() {
+    //     torch.turnOFF()
+    // }
+
 </script>
+<!--<button type="button" onclick="usea()">ON</button>-->
+<!--<button type="button" onclick="usea1()">OFF</button>-->
 </body>
 </html>
