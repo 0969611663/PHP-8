@@ -6,9 +6,135 @@
 </head>
 <body>
 <script>
-    var Mobile = function () {
+    var Mobile = function (energy, editor, inbox, sent, status) {
 
+        //thuoc tinh
+        this.energy = energy;
+        this.editor = editor;
+        this.inbox = inbox;
+        this.sent = sent;
+        this.status = false;
+
+        //phuong thuc
+        this.turnOn = function () {
+            this.status = true;
+            this.decreaseEnergy();
+            alert("PHONE IS ON " + this.energy + "%Pin");
+            this.outOfBattery();
+        }
+
+        this.turnOff = function () {
+            this.status = false;
+            alert("PHONE IS OF");
+        }
+
+        this.charging = function () {
+            if (this.energy >= 100) {
+                alert("FULL PIN");
+            } else {
+                this.energy += 1;
+                alert("Đang nạp: " + this.energy + "%Pin");
+            }
+        }
+
+        this.message = function () {
+            this.status = true;
+            this.decreaseEnergy();
+            alert("đang soan tin nhắn: " + this.energy + "%Pin");
+            this.outOfBattery();
+        }
+
+        this.receive = function () {
+            this.status = true;
+            this.decreaseEnergy();
+            alert("Đã nhận được tin nhắn: " + this.energy + "%Pin");
+            this.outOfBattery();
+        }
+
+        this.send = function () {
+            this.status = true;
+            this.decreaseEnergy();
+            alert("Đang gửi tin nhắn: " + this.energy + "%Pin");
+            this.outOfBattery();
+        }
+        this.watchMailbox = function () {
+            this.status = true;
+            this.decreaseEnergy();
+            alert("xem tin trong hộp thư đến: " + this.energy + "%Pin");
+            this.outOfBattery();
+        }
+        this.messageSent = function () {
+            this.status = true;
+            this.decreaseEnergy();
+            alert("xem tin đã gửi: " + this.energy + "%Pin");
+            this.outOfBattery();
+        }
+
+        this.checkStatusOnOff = function () {
+            if (this.status == true) {
+                alert("Máy đã bật: " + this.energy + "%Pin");
+            } else {
+                alert("Máy đã tắt");
+            }
+        }
+
+        this.decreaseEnergy = function () {
+            this.energy -= 1;
+        }
+
+        this.outOfBattery = function () {
+            if (this.energy <= 0) {
+                alert("Hết pin");
+            }
+        }
+    }
+
+    var Phone = new Mobile(5);
+
+    function use() {
+        Phone.turnOn()
+    }
+
+    function use1() {
+        Phone.turnOff()
+    }
+
+    function use2() {
+        Phone.charging()
+    }
+
+    function use3() {
+        Phone.message()
+    }
+
+    function use4() {
+        Phone.receive()
+    }
+
+    function use5() {
+        Phone.send()
+    }
+
+    function use6() {
+        Phone.watchMailbox()
+    }
+
+    function use7() {
+        Phone.messageSent()
+    }
+
+    function checkOnOff() {
+        Phone.checkStatusOnOff()
     }
 </script>
+<button type="button" onclick="use()">TurnOn</button>
+<button type="button" onclick="use1()">TurnOff</button>
+<button type="button" onclick="use2()">Charging</button>
+<button type="button" onclick="use3()">Message</button>
+<button type="button" onclick="use4()">Receive</button>
+<button type="button" onclick="use5()">Send</button>
+<button type="button" onclick="use6()">WatchMailBox</button>
+<button type="button" onclick="use7()">MessageSent</button>
+<button type="button" onclick="checkOnOff()">Check</button>
 </body>
 </html>

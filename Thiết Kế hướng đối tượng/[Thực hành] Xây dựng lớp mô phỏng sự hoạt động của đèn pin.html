@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Battery(energy) {
+        this.energy = energy;
+
+        this.Batterys = function (energy) {
+            this.energy = energy;
+        }
+
+        this.setEnergy = function (energy_new) {
+            energy = energy_new;
+        }
+
+        this.getEnergy = function () {
+            return this.energy;
+        }
+
+        this.decreaseEnergy = function () {
+            this.energy = energy - 2;
+        }
+    }
+    function FlashLamp(boolean, Battery) {
+        this.status = boolean;
+        this.battery = Battery;
+
+        this.FlashLamps = function () {
+            return turnOff = this.battery < 0
+        }
+    }
+</script>
+</body>
+</html>
