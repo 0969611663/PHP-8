@@ -8,11 +8,11 @@
 <script>
     var Battery = function (energy) {
         this.energy = energy;
-
+        //thiêt lập lại năng lương
         this.setEnergy = function (energy_new) {
             this.energy = energy_new;
         }
-
+        //lấy giá trị năng lượng
         this.getEnergy = function () {
             return this.energy;
         }
@@ -25,18 +25,18 @@
     var FlashLamp = function () {
         this.status = false;
         this.battery = null;
-
+        //thiết lập lại gia trị  pin
         this.setBattery = function (Battery_new) {
             this.battery = Battery_new;
         }
-
+        //lấy giá trị pin
         this.getBatteryInfo = function () {
             return this.battery;
         }
 
         this.light = function () {
             if (this.status) {
-                alert("Đèn sáng: ");
+                alert("Đèn sáng: " + this.battery.getEnergy() + "%pin");
             }
         }
 
@@ -49,35 +49,38 @@
                 alert("hết pin");
             }
         }
+
+        this.turnOFF = function () {
+            this.status = false;
+            alert("Tắt đèn");
+        }
     }
 
-    this.turnOFF = function () {
-        this.status = false;
-        alert("Tắt đèn");
-    }
+
     //Tao doi tuong pin
     var battery1 = new Battery(100);
-    //Tao doi tuong den
-    var flashLamp = new FlashLamp();
-    //Lap pin vao den
-    flashLamp.setBattery(battery1);
-    //bat den
-    flashLamp.turnON();
+    // //Tao doi tuong den
+    // var flashLamp = new FlashLamp();
+    // //Lap pin vao den
+    // flashLamp.setBattery(battery1);
+    // //bat den
+    // flashLamp.turnON();
     // //tat den
     // flashLamp.turnOFF();
 
-    // var torch = new FlashLamp(100);
-    //
-    // function usea() {
-    //     torch.turnON()
-    // }
-    //
-    // function usea1() {
-    //     torch.turnOFF()
-    // }
+    var flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery1);
+
+    function usea() {
+        flashLamp.turnON()
+    }
+
+    function usea1() {
+        flashLamp.turnOFF()
+    }
 
 </script>
-<!--<button type="button" onclick="usea()">ON</button>-->
-<!--<button type="button" onclick="usea1()">OFF</button>-->
+<button type="button" onclick="usea()">ON</button>
+<button type="button" onclick="usea1()">OFF</button>
 </body>
 </html>
