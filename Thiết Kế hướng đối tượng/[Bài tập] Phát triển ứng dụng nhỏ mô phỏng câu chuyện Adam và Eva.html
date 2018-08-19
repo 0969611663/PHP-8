@@ -6,7 +6,145 @@
 </head>
 <body>
 <script>
+    var Apple = function (weight) {
+        this.weightApple = weight;
+
+        this.getWeightApple = function () {
+            return this.weightApple;
+        }
+
+        this.decreaseApple = function () {
+            this.weightApple -= 1;
+        }
+
+        this.isEmpty = function () {
+            if (this.weightApple <= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    var Human = function (kg, gender, name) {
+
+        this.weightHuman = kg;
+        this.name = name;
+        this.gender = gender;
+        this.apple = null;
+
+        this.isMale = function () {
+            if (this.gender === 1) {
+                alert("Male");
+            } else {
+                alert("Female");
+            }
+        };
+
+        //thay đổi giới tính
+        this.setGender = function (gender_new) {
+            this.gender = gender_new;
+        };
+        //ktra quả táo
+
+
+        this.checkApple = function () {
+
+            if (this.apple.isEmpty() === false) {
+                alert("hết táo");
+            } else
+                alert("còn táo" + this.apple.getWeightApple());
+        };
+
+        this.eat = function () {
+            if (this.apple.getWeightApple() > 0) {
+                this.apple.decreaseApple();
+                this.weightHuman = this.weightHuman + 1;
+                alert("đang ăn táo");
+            } else
+                alert("hết táo rồi");
+        };
+
+        this.say = function () {
+            alert("hello");
+        };
+
+        this.getName = function () {
+            alert("ten: " + this.name);
+        };
+
+        this.setName = function (name_new) {
+            this.name = name_new;
+        }
+
+        this.getWeight = function () {
+            return this.weightHuman;
+        }
+
+        this.setWeight = function (weightHuman_new) {
+            this.weightHuman = weightHuman_new;
+        }
+
+        this.setApple = function (apple_) {
+            this.apple = apple_;
+        }
+    }
+
+
+    //khai báo
+
+    var tao1 = new Apple(10);
+
+    var nguoi1 = new Human(50, 1, "nam");
+    var nguoi2 = new Human(40, 2, "nu");
+    nguoi1.setApple(tao1);
+    nguoi2.setApple(tao1);
+
+    function check() {
+        nguoi1.checkApple()
+    }
+
+    function namEat() {
+        nguoi1.eat()
+    }
+
+    function nuEat() {
+        nguoi2.eat();
+    }
+
+    function namSay() {
+        nguoi1.say();
+    }
+
+    function nuSay() {
+        nguoi2.say();
+    }
+
+    function namNam() {
+        nguoi1.getName();
+    }
+
+    function nuName() {
+        nguoi2.getName();
+    }
+
+    function namKg() {
+        alert(nguoi1.getWeight());
+    }
+
+    function nuKg() {
+        alert(nguoi2.getWeight());
+    }
 
 </script>
+<button type="button" onclick="check()">CheckApple</button>
+<button type="button" onclick="namEat()">NamEatApple</button>
+<button type="button" onclick="nuEat()">NuEatApple</button>
+<button type="button" onclick="namSay()">namSay</button>
+<button type="button" onclick="nuSay()">nuSay</button>
+<button type="button" onclick="namNam()">namName</button>
+<button type="button" onclick="nuName()">nuName</button>
+<button type="button" onclick="namKg()">KG Nam</button>
+<button type="button" onclick="nuKg()">KG Nu</button>
 </body>
 </html>

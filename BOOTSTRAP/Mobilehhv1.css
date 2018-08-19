@@ -1,0 +1,54 @@
+
+.backgroud1 {
+    background-image: url("../anh-du-an/anhnen.png");
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+     background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.backgroud1 img {
+    width: 100%;
+}
+
+.anhhoahau {
+    background-size: cover;
+    position: absolute;
+    right: 0px;
+    top: 3px;
+    bottom: -100px;
+}
+
+.backgroud3 {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 39px;
+    max-width: 330px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 159px;
+    margin-left: 225px;
+}
+
+.backgroud4 {
+    top: 70px;
+    margin-left: 730px;
+}
+
+.lhquangcao {
+    position: relative;
+    color: aliceblue;
+    padding: 17px 2px;
+    font-weight: bold;
+    background: linear-gradient(to left, rgba(84, 38, 112, 0), darkorchid, rgba(84, 38, 112, 0));
+    top: 0px;
+    margin-left: 1000px;
+    text-align: center;
+    text-transform: uppercase;
+    bottom: 0;
+}
+.container-layer.lhquangcao:after {
+    background: linear-gradient(to right, rgba(84, 38, 112, 0), #f2c337,  rgba(84, 38, 112, 0));
+}
