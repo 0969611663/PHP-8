@@ -11,23 +11,23 @@
         this.lamp = null;
 
         this.connectToLamp = function () {
-            if (this.status == false) {
-                alert("Not connected!!!");
-            } else {
+            if (this.status == true) {
                 alert("Connected!!!");
+            } else {
+                alert("Not Connected!!!");
             }
-        }
+        };
 
         this.switchOn = function () {
             this.status = true;
             alert("Switched On <3");
-        }
+        };
 
         this.switchOff = function () {
             this.status = false;
             alert("Switched Off");
         }
-    }
+    };
 
     var ElectricLamp = function () {
         this.statuss = false;
@@ -35,13 +35,13 @@
         this.turnOns = function () {
             this.statuss = true;
             alert("Light Bulb Turned On <3");
-        }
+        };
 
         this.turnOffs = function () {
             this.statuss = false;
             alert("Light Bulb Off");
         }
-    }
+    };
 
     var congtac = new SwitchButton();
 
