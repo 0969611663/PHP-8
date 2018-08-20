@@ -6,145 +6,63 @@
 </head>
 <body>
 <script>
-    var Rat = function (name, mass, speed,status) {
-        this.nameRat = name;
-        this.massRat = mass;
-        this.speedRat = speed;
-        this.status = true;
+    var SwitchButton = function () {
+        this.status = false;
+        this.lamp = null;
 
-        this.getNameRat = function () {
-            alert("Tên: " + this.nameRat);
-        }
-
-        //tốc độ con chuột
-        this.getSpeedRat = function () {
-            return this.speedRat;
-        }
-        this.setSpeedRat = function (speed_new) {
-            this.speedRat = speed_new;
-        }
-
-        //khối lượng chuột
-        this.getMassRat = function () {
-            return this.massRat;
-        }
-        this.setMassRat = function (massRat_new) {
-            this.massRat = massRat_new;
-        }
-
-        //trang thái sống hay chết
-        this.living = function () {
-            this.status = true;
-            alert("chuột còn sống");
-        }
-        this.dead = function () {
-            this.status = false;
-            alert("chuột đã chết");
-        }
-
-        //chuột kêu
-        this.sayR = function () {
-            alert("chít, chít");
-        }
-    }
-
-    var Cat = function (name, mass,speed) {
-        this.nameCat = name;
-        this.massCat = mass;
-        this.speedMaxCat = speed;
-        this.Rat11 = null;
-
-        this.getNameCat = function () {
-            alert("Tên: " + this.nameCat);
-        }
-
-        //tốc độ tối đa của mèo
-        this.getSpeedMaxCat = function () {
-            return this.speedMaxCat;
-        }
-        this.setSpeedMaxCat = function (speedMaxCat_new) {
-            this.speedMaxCat = speedMaxCat_new;
-        }
-
-        //khối lương mèo
-        this.getMassCat = function () {
-            return this.massCat;
-        }
-        this.setMassCat = function (massCat_new) {
-            this.massCat = massCat_new;
-        }
-
-        //mèo kêu
-        this.sayC = function () {
-            alert("meo, meo");
-        }
-
-        //mèo bắt chuột
-        this.catch = function () {
-            if (this.speedMaxCat > this.Rat11.getSpeedRat()) {
-                alert("MÈO BẮT ĐC CHUỘT");
+        this.connectToLamp = function () {
+            if (this.status == true) {
+                alert("Connected!!!");
             } else {
-                alert("MÈO K BẮT ĐC CHUỘT");
+                alert("Not Connected!!!");
             }
+        };
+
+        this.switchOn = function () {
+            this.status = true;
+            alert("Switched On <3");
+        };
+
+        this.switchOff = function () {
+            this.status = false;
+            alert("Switched Off");
         }
+    };
 
-        //mèo ăn chuột
-        this.eat = function () {
-            if (this.Rat11.status == true) {
-                this.massCat = this.massCat + this.Rat11.getMassRat();
-                alert("mèo đang ăn chuột: " + this.massCat + "kg");
-            } else  {
-                alert("chuột chết rồi mèo không ăn");
-            }
+    var ElectricLamp = function () {
+        this.statuss = false;
+
+        this.turnOns = function () {
+            this.statuss = true;
+            alert("Light Bulb Turned On <3");
+        };
+
+        this.turnOffs = function () {
+            this.statuss = false;
+            alert("Light Bulb Off");
         }
+    };
 
-        this.setSpeedR11 = function (speedRat11_new) {
-            this.Rat11 =  speedRat11_new;
-        }
+    var congtac = new SwitchButton();
+
+    var bongden = new ElectricLamp();
+
+    bongden.lamp(congtac);
+
+    function on() {
+        bongden.turnOns(congtac.switchOn());
     }
 
-    var rat1 = new Rat("Jerry", 10, 20);
-    var cat1 = new Cat("Tom", 30, 50);
-    cat1.setSpeedR11(rat1);
-
-    function sayRat() {
-        rat1.sayR();
-    }
-    function sayCat() {
-        cat1.sayC();
+    function off() {
+        bongden.turnOffs(congtac.switchOff());
     }
 
-    function nameRat() {
-        rat1.getNameRat();
+    function connection() {
+        congtac.connectToLamp();
     }
-    function nameCat() {
-        cat1.getNameCat();
-    }
-
-    function catchs() {
-        cat1.catch();
-    }
-
-    function Song() {
-        rat1.living();
-    }
-
-    function Chet() {
-        rat1.dead();
-    }
-
-    function eats() {
-        cat1.eat();
-    }
-
 </script>
-<button type="button" onclick="catchs()">Bắt Chuột</button>
-<button type="button" onclick="Song()">Live Rat</button>
-<button type="button" onclick="Chet()">Dead Rat</button>
-<button type="button" onclick="eats()">Ăn Chuột</button>
-<button type="button" onclick="nameCat()">Tên mèo</button>
-<button type="button" onclick="sayCat()">Mèo kêu</button>
-<button type="button" onclick="nameRat()">Tên Chuột</button>
-<button type="button" onclick="sayRat()">Chuột kêu</button>
+<button type="button" onclick="on()">BAT DEN</button>
+<button type="button" onclick="off()">TAT DEN</button>
+<button type="button" onclick="connection()">CONNECTION</button>
 </body>
 </html>
