@@ -13,7 +13,7 @@ function main() {
         console.log("ket qua khac 0");
         alert("ket qua khac 0");
     } catch (e) {
-        console.log("Erorr: " + e);
+        console.log("Erorr: " + e.messenger);
         alert("ket qua bang 0");
     }
 }
