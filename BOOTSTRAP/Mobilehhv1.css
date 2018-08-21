@@ -2,11 +2,17 @@
 .backgroud1 {
     background-image: url("../anh-du-an/anhnen.png");
     width: 100%;
-    height: 100%;
     background-size: 100%;
-     background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
+    height: 1022px;
+}
+
+@media only screen and (max-width: 576px) {
+    .backgroud1 {
+        height: 100%;
+    }
 }
 
 .backgroud1 img {
@@ -14,12 +20,22 @@
 }
 
 .anhhoahau {
+    background-image: url("../anh-du-an/anhnen1.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 100%;
     position: absolute;
-    right: 0px;
-    top: 3px;
-    bottom: -100px;
+    left: 0;
+    top: 0;
+    bottom: -60px;
 }
+@media only screen and (max-width: 576px) {
+    .anhhoahau {
+        height: 610px;
+    }
+}
+
 
 .backgroud3 {
     background: rgba(0, 0, 0, 0.6);
@@ -33,8 +49,11 @@
 }
 
 .backgroud4 {
+    background-position: 50% 50%;
     top: 70px;
     margin-left: 730px;
+    width: 800px;
+    height: 380px;
 }
 
 .lhquangcao {
@@ -51,4 +70,18 @@
 }
 .container-layer.lhquangcao:after {
     background: linear-gradient(to right, rgba(84, 38, 112, 0), #f2c337,  rgba(84, 38, 112, 0));
+}
+
+@media only screen and (max-width: 576px)  {
+    .backgroud3 {
+        display:  none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .backgroud4 {
+        top: 330px;
+        margin-left: -5px;
+        height: 560px;
+    }
 }

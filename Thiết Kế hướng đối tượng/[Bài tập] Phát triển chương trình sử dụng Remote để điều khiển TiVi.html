@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Remote = function (code, volume) {
+        this.code = code;
+        this.volume = volume;
+
+        this.getChannelControl = function () {
+            return this.code;
+        }
+
+        this.getVolume = function () {
+            return this.volume;
+        }
+
+        this.volumeControlUp = function () {
+            this.volume += 1;
+        }
+
+        this.volumeControlDown = function () {
+            this.volume -= 1;
+        }
+    }
+
+    var TiVi = function (channel, volumes) {
+        this.currentChannel = channel;
+        this.currentVolume = volumes;
+        this.status = false;
+        this.remote1 = null;
+
+        this.moved = function () {
+            this.remote1.getChannelControl();
+        }
+
+        this.tvOn = function () {
+            this.status = true;
+            alert("Bật tivi");
+        }
+        this.tvOff = function () {
+            this.status = false;
+            alert("Tắt tivi");
+        }
+
+        this.upVolume = function () {
+            this.remote1.volumeControlUp();
+            alert("Volume: " + this.remote1.getVolume());
+        }
+        this.downVolume = function () {
+            this.remote1.volumeControlDown();
+            alert("Volume: " + this.remote1.getVolume());
+        }
+
+
+        var remote0 = new Remote();
+        var tivi0 = new TiVi()
+    }
+</script>
+</body>
+</html>
