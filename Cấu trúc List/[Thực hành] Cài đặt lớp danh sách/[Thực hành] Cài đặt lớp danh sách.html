@@ -6,6 +6,24 @@
     <script src="[Thực hành] Cài đặt lớp danh sách.js"></script>
 </head>
 <body>
+<script>
+    var names = new List();
+    names.append("Clayton");
+    names.append("Raymond");
+    names.append("Cynthia");
+    names.append("Jennifer");
+    names.append("Bryan");
+    names.append("Danny");
 
+    names.next();
+    document.write(names.getElement()); // displays Raymond
+
+    names.next();
+    names.next();
+    names.prev();
+    document.write(names.getElement()); // displays Cynthia
+
+
+</script>
 </body>
 </html>

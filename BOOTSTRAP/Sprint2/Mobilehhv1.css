@@ -6,12 +6,12 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-    height: 1022px;
+    height: 860px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 1050px) {
     .backgroud1 {
-        height: 100%;
+        height: 1250px;
     }
 }
 
@@ -30,9 +30,9 @@
     top: 0;
     bottom: -60px;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 1050px) {
     .anhhoahau {
-        height: 610px;
+        height: 100%;
     }
 }
 
@@ -47,7 +47,7 @@
     margin-left: 225px;
 }
 
-@media only screen and (max-width: 576px)  {
+@media only screen and (max-width: 1050px)  {
     .backgroud3 {
         display:  none;
     }
@@ -55,16 +55,16 @@
 
 .backgroud4 {
     background-position: 50% 50%;
-    top: 70px;
-    margin-left: 730px;
+    top: 20px;
+    margin-left: 732px;
     width: 800px;
     height: 380px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 1050px) {
     .backgroud4 {
-        top: 315px;
-        margin-left: -5px;
+        top: 625px;
+        margin-left: 90px;
         height: 560px;
     }
 }
@@ -75,17 +75,18 @@
     padding: 15px 40px;
     font-weight: bold;
     background: linear-gradient(to left, rgba(84, 38, 112, 0), darkorchid, rgba(84, 38, 112, 0));
-    top: 95px;
-    margin-left: 1030px;
+    top: 10px;
+    margin-left: 965px;
     text-align: center;
     text-transform: uppercase;
     bottom: 0;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 1050px) {
     .lhquangcao {
-        top: -100px;
-        margin-left: 30px;
+        top: 450px;
+        margin-left: 210px;
+        font-size: 30px;
     }
 }
 
