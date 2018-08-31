@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat catch rat</title>
+</head>
+<body>
+<script>
+    var List = function () {
+        this.listSize = 0;
+        this.pos = 0;
+        this.dataStore = []; // initializes an empty array to store list elements
+        this.toString = function () {
+            return this.dataStore;
+        }
+        this.find = function (element) {
+            for (var i = 0; i < this.dataStore.length; ++i) {
+                if (this.dataStore [i] === element) {
+                    return i;
+                }
+            }
+        }
+        this.insert = function () {
+            var insertPos = this.find(after);
+            if (insertPos > -1) {
+                this.dataStore.splice(insertPos + 1, 0, element);
+                ++this.listSize;
+                return true;
+            }
+            return false;
+        }
+        this.append = function (element) {
+            this.dataStore[this.listSize++] = element;
+        }
+        this.getElement = function () {
+            return this.dataStore[this.pos];
+        }
+        this.remove = function () {
+            var foundAt = this.find(element);
+            if (foundAt > -1) {
+                this.dataStore.splice(foundAt, 1);
+                --this.listSize;
+                return true;
+            }
+            return false;
+        }
+    }
+    var Rat = function (name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.getName = function () {
+            return this.name;
+        }
+        this.getSpeed = function () {
+            return this.speed;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.run = function () {
+            alert("Speed of rat is " + this.getSpeed());
+        }
+    }
+    var Cat = function (name, speed) {
+        this.name = name;
+        this.speed = speed;
+        this.rat = null;
+        this.getName = function () {
+            return this.name;
+        }
+        this.getSpeed = function () {
+            return this.speed;
+        }
+        this.setRat = function (_rat) {
+            this.rat = _rat;
+        }
+        this.catch = function (rat) {
+            if (this.speed >= this.rat.getSpeed()) {
+                alert("Da bat duoc chuot");
+                return true;
+            } else {
+                alert("Chuot chay nhanh qua, khong bat duoc");
+                return false;
+            }
+        }
+        this.eatRat = function (rat) {
+            if (this.catch() == true) {
+                if (this.rat.getWeight() < 10) {
+                    alert("Chuot hoi gay");
+                }
+                if (this.rat.getWeight() > 10) {
+                    alert("Ngon! Chuot beo");
+                }
+            } else
+                alert("Co bat dc dau ma an");
+        }
+    }
+    //Xay dung lop game
+    var GameRatAndCat = function () {
+        this.rat = new Rat("Jerry", 13, 10);
+        this.cat = new Cat("Tom", 10);
+        this.main = function () {
+            this.cat.setRat(this.rat);
+            this.cat.catch();
+            this.cat.eatRat();
+        }
+    }
+    //chay game
+    var game1 = new GameRatAndCat()
+    game1.main();
+    //tao chuot
+    var rat1 = new Rat("Jerry", 10, 50);
+    var rat2 = new Rat("Tim", 12, 30);
+    var rat3 = new Rat("Miaw", 15, 80);
+    var rat4 = new Rat("Kia", 20, 10);
+    var rat5 = new Rat("Amao", 18, 90);
+    //tao danh sach chuot
+    var listRat = new List();
+    listRat.append(rat1);
+    listRat.append(rat2);
+    listRat.append(rat3);
+    listRat.append(rat4);
+    listRat.append(rat5);
+    //Tim chuot co ten bat ky
+    var searchRat = prompt("Input rat's name: ");
+    var indexRat = 0;
+    for (var i = 1; i <= listRat.dataStore.length; i++) {
+        if (listRat.toString()[i - 1].name === searchRat) {
+            indexRat = i;
+            break;
+        }
+    }
+    if (indexRat > 0) {
+        alert("Co meo ten la " + searchRat);
+    } else
+        alert("Khong co ten");
+
+    //Sap xep ten chuot theo can nang
+    function swap(arr, index1, index2) {
+        var temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+
+    function selectionSort() {
+        var min, temp;
+        for (var outer = 0; outer <= listRat.dataStore.length - 2; ++outer) {
+            min = outer;
+            for (var inner = outer + 1; inner <= listRat.dataStore.length - 1; ++inner) {
+                if (listRat.dataStore[inner].weight < listRat.dataStore[min].weight) {
+                    min = inner;
+                }
+            }
+            swap(listRat.dataStore, outer, min);
+        }
+    }
+
+    selectionSort(); //sap xep danh sach chuot
+    for (i = 0; i < listRat.listSize; i++) {
+        document.write((i + 1) + "-" + listRat.toString()[i].name + " - " + listRat.toString()[i].weight + "<br>");
+    }
+    //tha meo di bat chuot
+    var catNew = new Cat("Bom", 50);
+    for (i = 0; i < listRat.dataStore.length; i++) {
+        if (catNew.getSpeed() >= listRat.toString()[i].speed) {
+            document.write("Da bat duoc chuot " + listRat.toString()[i].name + "<br>");
+        }
+    }
+</script>
+
+</body>
+
+
+</html>
