@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products CRUD</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+<body>
+
+<h3>Add New Product</h3>
+<div class="container">
+    <form action="javascript:void(0);" method="POST" onsubmit="app.add()">
+        <input type="text" id="add-name" placeholder="New Product">
+        <input type="submit" value="Add">
+    </form>
+</div>
+
+<h3>Display All Product</h3>
+<table>
+    <tbody>
+    <tr>
+        <th style="text-align: left;">Product Name</th>
+        <th style="text-align: right; color:brown" colspan="2"><p id="counter">8 products</p></th>
+    </tr>
+    </tbody>
+    <tbody id="products">
+    <tr>
+        <td>Sony Xperia</td>
+        <td>
+            <button onclick="app.edit(0)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(0)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Samsung Galaxy</td>
+        <td>
+            <button onclick="app.edit(1)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(1)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Nokia 6</td>
+        <td>
+            <button onclick="app.edit(2)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(2)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Xiaomi Redmi Note 4</td>
+        <td>
+            <button onclick="app.edit(3)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(3)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Apple iPhone 6S</td>
+        <td>
+            <button onclick="app.edit(4)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(4)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Apple iPhone 8 Plus</td>
+        <td>
+            <button onclick="app.edit(5)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(5)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Fujitsu F-04E</td>
+        <td>
+            <button onclick="app.edit(6)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(6)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Oppo A71</td>
+        <td>
+            <button onclick="app.edit(7)">Edit</button>
+        </td>
+        <td>
+            <button onclick="app.delete(7)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div id="spoiler" role="aria-hidden">
+    <h3>Edit Product</h3>
+    <div class="container">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Edit"> <a onclick="closeInput()" aria-label="Close">✖</a>
+        </form>
+    </div>
+</div>
+<p></p>
+
+</body>
+</html>
