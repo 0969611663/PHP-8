@@ -29,7 +29,7 @@ function insert(newElement, item) {
 function display() {
     var currNode = this.head;
     while (!(currNode.next == null)) {
-        print(currNode.next.element);
+        document.write(currNode.next.element);
         currNode = currNode.next;
     }
 }
